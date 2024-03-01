@@ -1,0 +1,53 @@
+[
+
+    {
+      "id": 1,
+      "name": "Chicken Soup",
+      "description": "A comforting bowl of chicken soup, filled with tender chicken pieces, vegetables, and aromatic spices. Perfect for a soothing and delicious meal.",
+      "price": 5.99,
+      "image": "https://i.ibb.co/GxgHNLX/chicken-soup.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Coffee",
+      "description": "A rich and aromatic cup of coffee brewed to perfection. Savor the robust flavor and kickstart your day with this energizing beverage.",
+      "price": 2.49,
+      "image": "https://i.ibb.co/k1K4sTd/coffee.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Fuska",
+      "description": "A popular street food delicacy, Fuska is a crispy and hollow puri filled with a spicy and tangy mixture of tamarind water, mashed potatoes, and chickpeas.",
+      "price": 3.99,
+      "image": "https://i.ibb.co/2ggCHQT/fuska.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Mutton Biriyani",
+      "description": "Indulge in the exquisite flavors of Mutton Biriyani, a fragrant rice dish cooked with succulent mutton pieces, aromatic spices, and basmati rice.",
+      "price": 12.99,
+      "image": "https://i.ibb.co/3znRbzD/mutton-biryani.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Chicken Biriyani",
+      "description": "Experience the tantalizing taste of Chicken Biriyani, a delightful blend of flavorful basmati rice, tender chicken, and aromatic spices. A true culinary delight.",
+      "price": 10.99,
+      "image": "https://i.ibb.co/nRNxkWR/chicken-biriyani.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Burger",
+      "description": "Sink your teeth into a juicy and mouthwatering burger, complete with a succulent patty, fresh vegetables, and a dollop of savory sauce. A classic favorite!",
+      "price": 8.99,
+      "image": "https://i.ibb.co/Fm6xJCt/burger.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Pizza",
+      "description": "Indulge in a slice of heaven with our delicious Pizza. Topped with gooey cheese, flavorful tomato sauce, and your favorite toppings, it's a taste sensation!",
+      "price": 14.99,
+      "image": "https://i.ibb.co/ZzrHPD7/pizza.jpg"
+    }
+  ]
+  
