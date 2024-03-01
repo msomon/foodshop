@@ -60,9 +60,9 @@ const deleteItem = (data)=>{
     return (
 
        
-        <div className="flex mb-3 gap-5  flex-row h-40 card w-[500px]  bg-base-100 shadow-xl justify-center  items-center mx-auto">
+        <div className="flex mb-3 gap-2 lg:gap-5  flex-row h-40 card w-[320px] lg:w-[500px]  bg-base-100 shadow-xl justify-center  items-center mx-auto">
         <div className=" circle ">
-                <img className='h-32 w-40 rounded-lg' src={image} alt="Avatar Tailwind CSS Component" />
+                <img className='h-32 w-32 lg:w-40 rounded-lg' src={image} alt="Avatar Tailwind CSS Component" />
               </div>
         
           <h1 className="text-2xl">{shortName}</h1>

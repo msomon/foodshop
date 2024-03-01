@@ -22,16 +22,16 @@ const Cart = () => {
     
 
     return (
-        <div className='lg:flex mt-10 md:mt-20 lg:mt-20 mx-auto'>
+        <div className='lg:flex lg:justify-evenly mt-10 md:mt-20 lg:mt-20 mx-auto'>
  
-            <div className=' gap-3  justify-center items-center lg:w-2/6 md:w-full w-full mx-auto'>
+            <div className=' gap-3  justify-center items-center lg:w-2/6 md:w-full w-full sm:mx-auto '>
 
             {
                 cart?.map((item,index)=><Item key={index} item={item} ></Item>)
             }
             </div>
 
-    <div className="flex  gap-5 h-60 w-96 card   bg-base-100 shadow-xl justify-center  items-center mx-auto">
+    <div className="flex  gap-5 h-60 w-[320px] lg:w-96 card   bg-base-100 shadow-xl justify-center  items-center sm:mx-auto ">
         
        <h1 className='text-2xl'>Subtotal :${totalSum}</h1>
       

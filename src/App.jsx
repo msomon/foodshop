@@ -10,6 +10,7 @@ import Footer from './Share/footer'
 import Cart from './component/cart'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import RequireAuth from './userAuth/RequireAuth'
 
 function App() {
  
@@ -23,7 +24,12 @@ function App() {
 
 <Route path="/" element={<Home/>}></Route>
 <Route path="/manu" element={<Manu/>}></Route>
-<Route path="/cart" element={<Cart/>}></Route>
+<Route path="/cart" element={
+  <RequireAuth>
+  <Cart/>
+  </RequireAuth>
+
+}></Route>
 <Route path="/login" element={<Login />}></Route>
 <Route path="/signup" element={<SignUp />}></Route>
 
