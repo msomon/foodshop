@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "customer_name": "John Doe",
+    "image": "https://i.ibb.co/F6fB8r1/customer3-2.jpg",
+    "comment": "The web developer did an excellent job! The website is user-friendly and visually appealing.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "customer_name": "Jane Smith",
+    "image": "https://i.ibb.co/RhWqdL6/customer1.jpg",
+    "comment": "Highly impressed with the web developer's skills. They implemented all our requirements effectively. The site looks fantastic!",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "customer_name": "Mike Johnson",
+    "image": "https://i.ibb.co/hDDvjF8/customer2.jpg",
+    "comment": "Smooth collaboration with the web developer. They were responsive and delivered a top-notch website. Very satisfied with the outcome.",
+    "rating": 4
+  }
+
+  
+]

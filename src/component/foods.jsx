@@ -13,9 +13,9 @@ const Foods = () => {
 
  const [data] = useHooks()
 
-//  if(!data){
-//   return <Loading></Loading>
-// }
+ if(!data){
+  return <Loading></Loading>
+}
 
   return (
 

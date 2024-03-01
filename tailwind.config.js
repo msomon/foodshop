@@ -23,13 +23,13 @@ export default {
         
 "secondary": "#ffa500",
         
-"accent": "#000000",
+"accent": "#00C2C6",
         
 "neutral": "#008000",
         
 "base-100": "#ffffff",
         
-"info": "#ffff00",
+"info": "#000000",
         
 "success": "#008000",
         

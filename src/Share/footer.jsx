@@ -9,7 +9,7 @@ const Footer = () => {
 
 
 
-  <footer className="footer w-full p-10  text-accent z-10 mx-auto mt-3  items-center ">
+  <footer className="footer w-full p-10  text-info z-10 mx-auto mt-3  items-center ">
     
 
   <div className='

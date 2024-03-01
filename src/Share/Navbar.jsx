@@ -19,11 +19,21 @@ const [cart] = CartItem()
   
         <li ><NavLink className='sm:w-20 justify-center' to='/'>Home</NavLink></li>
         <li><NavLink className='sm:w-20 justify-center'  to="/manu">Manu</NavLink></li>
-        <li><NavLink className='sm:w-20 justify-center'  to="/contact" >Contact</NavLink></li>
+
         <li className='relative'><NavLink className='sm:w-20 justify-center '  to="/cart" ><div className="badge text-red-600 absolute -mt-10 -mr-6">+{cart?.length}</div><BsCart3 className='text-2xl' /> </NavLink></li>
 
 
-        <li className='p-0 h-4'>{user ? <button className="text-white text-center justify-center bg-primary font-bold text-sm " onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
+        <li className='p-0 h-4'>{user ? <button className="text-white text-center justify-center bg-primary font-bold text-sm  " onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
+
+        <div className="dropdown  mt-2 ">
+     <NavLink tabIndex={0} role="button" className=" text-center  btn-md ">Dashboard</NavLink>
+     <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-42">
+    <li><NavLink className='sm:w-20 justify-center'  to="dashboard/reviews" >Reviews</NavLink></li>
+    <li><NavLink className='sm:w-20 justify-center'  to="dashboard/myOrders" >Myorders</NavLink></li>
+    
+  </ul>
+</div>
+        
   </>
 
   return (
@@ -32,11 +42,11 @@ const [cart] = CartItem()
 
 
       <div className="dropdown flex sm:flex-row-reverse justify-between sm:mx-8 ">
-        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden ">
+        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden mb- ">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </div>
        
-        <ul  tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-32 gap-2">
+        <ul  tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-32 gap-2 h-fit pb-2">
        {manuItem}
       
         </ul>
