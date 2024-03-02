@@ -1,4 +1,5 @@
 
+import { Rating } from "@smastrom/react-rating";
 import { IoStar } from "react-icons/io5";
 
 
@@ -16,12 +17,11 @@ const Review = ({review}) => {
     </figure>
   <div className="card-body">
     <h2 className="card-title">Name:{customer_name}</h2>
-    <h2 className="card-title">Rating:
-    <IoStar className="text-blue-700" />
-    <IoStar className="text-blue-700" />
-    <IoStar className="text-blue-700" />
-    <IoStar className="text-blue-700" />
-    <IoStar className="text-blue-700" />
+    <h2 className="card-title">Rating: <Rating
+      style={{ maxWidth: 180 }}
+      value={rating}
+      readOnly
+    />
     
     
     </h2>

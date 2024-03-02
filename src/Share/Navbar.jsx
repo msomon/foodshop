@@ -29,8 +29,8 @@ const [cart] = CartItem()
         <div className="dropdown sm:hidden md:block  lg:block dropdown-hover  mt-2 ">
      <NavLink tabIndex={0} role="button" className=" text-center  btn-md ">Dashboard</NavLink>
      <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-42">
-    <li><NavLink className='sm:w-20 justify-center'  to="dashboard/addreview" >Add Review</NavLink></li>
-    <li><NavLink className='sm:w-20 justify-center'  to="dashboard/myOrders" >Myorders</NavLink></li>
+    <li><NavLink className='sm:w-28 justify-center'  to="dashboard/addreview" >Add Review</NavLink></li>
+    <li><NavLink className='sm:w-28 justify-center'  to="dashboard/myOrders" >Myorders</NavLink></li>
   </ul>
 </div>
 }
