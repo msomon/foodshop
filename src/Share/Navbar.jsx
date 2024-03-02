@@ -15,6 +15,7 @@ function Navbar() {
 
 
 const [cart] = CartItem()
+
   const manuItem = <>
   
         <li ><NavLink className='sm:w-20 justify-center' to='/'>Home</NavLink></li>
@@ -24,15 +25,15 @@ const [cart] = CartItem()
 
         <li className='sm:block md:hidden ms-3 lg:hidden'><NavLink className='sm:w-20 justify-center'  to="/dashboard">Dashboard</NavLink></li>
 
+     {user && 
         <div className="dropdown sm:hidden md:block  lg:block dropdown-hover  mt-2 ">
      <NavLink tabIndex={0} role="button" className=" text-center  btn-md ">Dashboard</NavLink>
      <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-42">
     <li><NavLink className='sm:w-20 justify-center'  to="dashboard/addreview" >Add Review</NavLink></li>
     <li><NavLink className='sm:w-20 justify-center'  to="dashboard/myOrders" >Myorders</NavLink></li>
-    
-
   </ul>
 </div>
+}
     
     <li className='p-0 h-4'>{user ? <button className="text-white text-center justify-center bg-primary font-bold text-sm  " onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
         

@@ -13,13 +13,13 @@ const Dashboard = () => {
 
 
     return (
-        <div className="drawer drawer-mobile h-80 ">
+        <div className="drawer drawer-mobile ">
             
         {/* <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">Dashboard
       </label> */}
        <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
        <div className="drawer-content">
-           <h2 className='lg:text-2xl sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
+           <h2 className='lg:text-2xl mt-4 sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
 
            {
        user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost bg-blue-500 w-28 mt-3 ml-52 lg:hidden md:hidden flex justify-end">Dashboard

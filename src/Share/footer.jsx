@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-      <div className='relative footer mt-20'>
+      <div className=' footer mt-20'>
 
 
 
