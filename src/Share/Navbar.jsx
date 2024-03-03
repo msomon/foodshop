@@ -42,7 +42,7 @@ const [cart] = CartItem()
               <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-44">
                <li><NavLink to="dashboard/users">Users</NavLink></li>
                <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
-               <li><NavLink to="dashboard/allprders">All Orders</NavLink></li>
+               <li><NavLink to="dashboard/allorders">All Orders</NavLink></li>
                <li><NavLink to="dashboard/allproducts">All Products</NavLink></li>
                </ul>
                }
