@@ -1,34 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
-import axios from 'axios';
+import axios from "axios";
+import { useEffect, useState } from "react"
 
-const UseAdmin = () => {
-
+const useAdmin = user => {
+    const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
 
-    const [admin, setAdmin] = useState();
-    const [user]= useAuthState(auth)
 
-    useEffect( ()=>{
+    useEffect( () =>{
+        const email = user?.email;
 
-        if(user?.email){
+        if(email){
 
-        
-
-        axios.get(`http://localhost:5000/users/admin/${user?.email}`)
-        .then(res=>{
+   
+        axios.get(`http://localhost:5000/users/admin/${email}`)
+     .then(res=>{
     
-        console.log(res.data.role);
-    
+     setAdmin(res.data.admin)
         setAdminLoading(false)
         })
+            
+    }     
+       
+    }, [user])
 
-    }
-    },[])
+    return [admin, adminLoading]
+}
 
-   
-   
-};
-
-export default UseAdmin;
+export default useAdmin;

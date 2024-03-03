@@ -1,16 +1,17 @@
-import React from 'react';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Outlet } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useAdmin from '../hooks/useAdmin';
+
 
 const Dashboard = () => {
 
-
     const [user] = useAuthState(auth)
 
-    const admin ="false"
-
+    const [admin] = useAdmin(user)
+    
 
     return (
         <div className="drawer drawer-mobile ">
@@ -22,7 +23,7 @@ const Dashboard = () => {
            <h2 className='lg:text-2xl mt-4 sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
 
            {
-       user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="dashboard btn btn-ghost bg-blue-500 w-28 mt-3  lg:hidden md:hidden flex justify-end">Dashboard
+       user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="dashboard ml-52 btn btn-ghost bg-blue-500 w-28 mt-3 mb-2  lg:hidden md:hidden flex justify-end">Dashboard
       </label>
       }     
     
@@ -37,23 +38,24 @@ const Dashboard = () => {
                
        
                {
-                (user) && <>
+                (user && !admin ) &&  <>
                <li><NavLink to='myorders' >My Orders</NavLink></li>
                <li><NavLink to="addreview">Add Review</NavLink></li>
+               <li><NavLink className='sm:w-28 justify-center'  to="myprofile" >My Profile</NavLink></li>
 
-               <li><Link to="users">Users</Link></li>
-               <li><NavLink to="addproduct">Add Product</NavLink></li>
-               <li><NavLink to="manageorders">Manage All Orders</NavLink></li>
-               <li><NavLink to="manageproducts">Manage All Products</NavLink></li>
+               
                
                    </>
                }
 
 
-               {/* { admin && <> */}
-               
+               { admin && <>
+               <li><Link to="users">Users</Link></li>
+               <li><NavLink to="addproduct">Add Product</NavLink></li>
+               <li><NavLink to="allorders">All Orders</NavLink></li>
+               <li><NavLink to="allproducts">All Products</NavLink></li>
               
-               {/* </>} */}
+               </>}
                
            </ul>
           

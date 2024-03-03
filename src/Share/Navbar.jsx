@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import auth from '../../firebase.init';
 import { BsCart3 } from "react-icons/bs";
 import CartItem from '../hooks/CartItem';
+import useAdmin from '../hooks/useAdmin';
 
 function Navbar() {
   const [user] = useAuthState(auth);
@@ -12,9 +13,10 @@ function Navbar() {
     signOut(auth);
     // localStorage.removeItem('accessToken');
 };
-
-
+const [admin] = useAdmin(user)
 const [cart] = CartItem()
+
+
 
   const manuItem = <>
   
@@ -28,12 +30,26 @@ const [cart] = CartItem()
      {user && 
         <div className="dropdown sm:hidden md:block  lg:block dropdown-hover  mt-2 ">
      <NavLink tabIndex={0} role="button" className=" text-center  btn-md ">Dashboard</NavLink>
-     <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-42">
-    <li><NavLink className='sm:w-28 justify-center'  to="dashboard/addreview" >Add Review</NavLink></li>
-    <li><NavLink className='sm:w-28 justify-center'  to="dashboard/myOrders" >Myorders</NavLink></li>
-  </ul>
+    {
+      user && !admin && <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-42">
+       <li><NavLink className='sm:w-28 justify-center'  to="dashboard/addreview" >Add Review</NavLink></li>
+       <li><NavLink className='sm:w-28 justify-center'  to="dashboard/myorders" >Myorders</NavLink></li>
+       <li><NavLink className='sm:w-28 justify-center'  to="dashboard/myprofile" >My Profile</NavLink></li>
+     </ul>
+    }
+
+   { admin && 
+              <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box gap-2 w-44">
+               <li><NavLink to="dashboard/users">Users</NavLink></li>
+               <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
+               <li><NavLink to="dashboard/allprders">All Orders</NavLink></li>
+               <li><NavLink to="dashboard/allproducts">All Products</NavLink></li>
+               </ul>
+               }
 </div>
+
 }
+
     
     <li className='p-0 h-4'>{user ? <button className="text-white text-center justify-center bg-primary font-bold text-sm  " onClick={logout} >Sign Out</button> : <NavLink to="/login">Login</NavLink>}</li>
         

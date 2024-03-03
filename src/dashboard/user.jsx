@@ -18,7 +18,7 @@ const User = ({user,refetch}) => {
        }
 
         if(res.data.modifiedCount > 0 ){
-         toast("New Admin Added")
+         toast(`${email} Admin Added`)
          refetch()
         }
     })
@@ -30,10 +30,11 @@ const User = ({user,refetch}) => {
     return (
        
        
-        <div className=' md:flex lg:flex ms-5 mt-2'>
-        <div className='flex w-[120px] mx-auto justify-center my-4 pt-4'> {email}  </div>
+        <div className=' md:flex  md:[400px] lg:[500px] lg:flex md:gap-20 lg:gap-20 mt-2 justify-center items-center mx-auto lg:p-4 md:p-2'>
+
+        <div className='flex md:w-[200px] lg:w-[200px] w-[150px] mx-auto justify-center my-4 '><p className='lg:ms-4 '>{email}  </p> </div>
         
-       <div className='sm:flex justify-center items-center gap-3 mx-auto' >
+       <div className='sm:flex justify-center items-center gap-5  mx-auto' >
 
        <div>{role != "admin" ?  <button onClick={() => makeAdmin(email)} className='btn btn-secondary'>Add Admin</button> : <button className='btn btn-success '  disabled >Already Admin</button> }</div>
         <div><button className='btn btn-warning'>Remove</button></div>

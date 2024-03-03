@@ -27,8 +27,8 @@ const Users = () => {
 
 
 
-<div className='lg:w-[600px] md:w-[600px] w-[300px] mx-auto rounded-lg bg-white mt-14'>
-          <div className="mb-4 mx-auto">
+<div className='lg:w-[600px] md:w-[600px] w-[300px] mx-auto rounded-lg bg-white mt-14 '>
+          <div className="mb-4 mx-auto justify-center items-center  ">
 
     
    

@@ -17,6 +17,12 @@ import AddReview from './dashboard/addReview'
 import MyOrders from './dashboard/myOrders'
 import Payment from './dashboard/Payment'
 import Users from './dashboard/users'
+import RequireAdmin from './userAuth/RequireAdmin'
+import AddProduct from './dashboard/addProduct'
+import AllProducts from './dashboard/allProducts'
+import AllOrders from './dashboard/allOrders'
+import MyProfile from './dashboard/MyProfile'
+import UpdateMyProfile from './dashboard/UpdateMyProfile'
 
 function App() {
  
@@ -43,8 +49,14 @@ function App() {
 
 <Dashboard /></RequireAuth>}>
 
-<Route path='myOrders' element={
+<Route path='myorders' element={
 <RequireAuth><MyOrders/></RequireAuth>} >  </Route>
+
+<Route path='myprofile' element={
+<RequireAuth><MyProfile/></RequireAuth>} >  </Route>
+
+<Route path='updatemyprofile' element={
+<RequireAuth><UpdateMyProfile/></RequireAuth>} >  </Route>
 
 
 <Route path='payment' element={
@@ -54,7 +66,19 @@ function App() {
   <RequireAuth> <AddReview/> </RequireAuth>} >  </Route>
 
 <Route path='users' element={
-  <RequireAuth> <Users/> </RequireAuth>} >  </Route>
+  <RequireAdmin> <Users/> </RequireAdmin>} >  </Route>
+
+<Route path='addproduct' element={
+  <RequireAdmin> <AddProduct/> </RequireAdmin>} >  </Route>
+
+<Route path='allproducts' element={
+  <RequireAdmin> <AllProducts/> </RequireAdmin>} >  </Route>
+
+<Route path='allorders' element={
+  <RequireAdmin> <AllOrders/> </RequireAdmin>} >  </Route>
+
+
+
 
 
 </Route>
