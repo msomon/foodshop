@@ -43,7 +43,7 @@ const [cart] = CartItem()
                <li><NavLink to="dashboard/users">Users</NavLink></li>
                <li><NavLink to="dashboard/addproduct">Add Product</NavLink></li>
                <li><NavLink to="dashboard/allorders">All Orders</NavLink></li>
-               <li><NavLink to="dashboard/allproducts">All Products</NavLink></li>
+               <li><NavLink to="dashboard/allitems">All Items</NavLink></li>
                </ul>
                }
 </div>

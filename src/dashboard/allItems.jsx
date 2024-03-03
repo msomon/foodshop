@@ -1,18 +1,12 @@
 
 import Loading from "../Share/Loading";
 import useHooks from "../hooks/useHooks"
-import Food from "./food";
+import AllItem from "./allItem";
 
 
+const AllItems = () => {
 
-
-
-const Manu = () => {
-
- 
-    
-
- const [data] = useHooks()
+ const [data,refetch] = useHooks()
 
 
  if(!data){
@@ -26,14 +20,14 @@ const Manu = () => {
  
     <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 lg:gap-12 md:gap-8  justify-center items-center lg:w-4/6 md:w-full w-full mx-auto">
       {
-       data?.map(food=><Food key={food._id} food={food} ></Food>)
+       data?.map(food=><AllItem key={food._id} refetch={refetch} food={food} ></AllItem>)
       }
       </div>
     </div>
   );
 };
 
-export default Manu;
+export default AllItems;
 
 
 

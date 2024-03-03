@@ -112,11 +112,7 @@ useEffect( ()=>{
   }
 
 
-
-  if(success){
-    navigate("/")
-  }
-
+  
  
 
   return (

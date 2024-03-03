@@ -1,7 +1,7 @@
 
 import useHooks from "../hooks/useHooks"
 import Loading from "../Share/Loading";
-import Test from "./test";
+import Food from "./food";
 
 
 
@@ -21,7 +21,7 @@ const Foods = () => {
     
     <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 lg:gap-12 md:gap-8  justify-center items-center lg:w-4/6 md:w-full w-full mx-auto">
       {
-        data?.slice(1,4)?.map(food=><Test key={food._id} food={food} ></Test>)
+        data?.slice(1,4)?.map(food=><Food key={food._id} food={food} ></Food>)
       }
       </div>
     </div>

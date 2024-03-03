@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
@@ -7,9 +7,11 @@ const Contact = () => {
   const { register, formState: { errors }, handleSubmit ,reset } = useForm();
 
   const sendEmail = async (e) => {
+    console.log(e.target);
     e.preventDefault();
     emailjs.sendForm('service_gu2xg1r', 'template_yw6ejpj', e.target, 'VjdqwJv2RVXPZNrYM')
     .then((result) => {
+      console.log(result);
       toast.success('Email Send Succesfully')
       reset()
         // console.log(result.text);

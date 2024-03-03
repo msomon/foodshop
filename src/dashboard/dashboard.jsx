@@ -14,7 +14,7 @@ const Dashboard = () => {
     
 
     return (
-        <div className="drawer drawer-mobile ">
+        <div className="drawer drawer-mobile min-h-80 ">
             
         {/* <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">Dashboard
       </label> */}
@@ -53,7 +53,7 @@ const Dashboard = () => {
                <li><Link to="users">Users</Link></li>
                <li><NavLink to="addproduct">Add Product</NavLink></li>
                <li><NavLink to="allorders">All Orders</NavLink></li>
-               <li><NavLink to="allproducts">All Products</NavLink></li>
+               <li><NavLink to="allitems">All Items</NavLink></li>
               
                </>}
                

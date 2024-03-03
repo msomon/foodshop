@@ -12,17 +12,16 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './userAuth/RequireAuth'
 import Dashboard from './dashboard/dashboard'
-import Reviews from './component/reviews'
 import AddReview from './dashboard/addReview'
 import MyOrders from './dashboard/myOrders'
 import Payment from './dashboard/Payment'
 import Users from './dashboard/users'
 import RequireAdmin from './userAuth/RequireAdmin'
 import AddProduct from './dashboard/addProduct'
-import AllProducts from './dashboard/allProducts'
 import AllOrders from './dashboard/allOrders'
 import MyProfile from './dashboard/MyProfile'
 import UpdateMyProfile from './dashboard/UpdateMyProfile'
+import AllItems from './dashboard/allItems'
 
 function App() {
  
@@ -45,9 +44,9 @@ function App() {
 <Route path="/login" element={<Login />}></Route>
 <Route path="/signup" element={<SignUp />}></Route>
 
-<Route  path="dashboard" element={<RequireAuth>
+<Route  path="dashboard" element={
 
-<Dashboard /></RequireAuth>}>
+<Dashboard />}>
 
 <Route path='myorders' element={
 <RequireAuth><MyOrders/></RequireAuth>} >  </Route>
@@ -63,7 +62,7 @@ function App() {
 <RequireAuth><Payment/></RequireAuth>} >  </Route>
 
 <Route path='addreview' element={
-  <RequireAuth> <AddReview/> </RequireAuth>} >  </Route>
+  <RequireAuth> <AddReview/> </RequireAuth>} > </Route>
 
 <Route path='users' element={
   <RequireAdmin> <Users/> </RequireAdmin>} >  </Route>
@@ -71,8 +70,8 @@ function App() {
 <Route path='addproduct' element={
   <RequireAdmin> <AddProduct/> </RequireAdmin>} >  </Route>
 
-<Route path='allproducts' element={
-  <RequireAdmin> <AllProducts/> </RequireAdmin>} >  </Route>
+<Route path='allitems' element={
+  <RequireAdmin> <AllItems/> </RequireAdmin>} >  </Route>
 
 <Route path='allorders' element={
   <RequireAdmin> <AllOrders/> </RequireAdmin>} >  </Route>
@@ -86,7 +85,7 @@ function App() {
 
 
     </Routes>
-    {/* <Footer/> */}
+    <Footer/>
     </div>
    
   )

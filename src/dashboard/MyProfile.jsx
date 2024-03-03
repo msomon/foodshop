@@ -34,7 +34,8 @@ const MyProfile = () => {
   return (
     <div className=' sm:mx-4 mx-auto w-full  justify-between mt-8 mb-3'>
       
-    <div className="card w-[320px] md:w[400px] lg:w-[460px] bg-base-100 shadow-2xl mx-auto "><h3 className='text-center mt-3 text-3xl text-green-500 '>🌹 My Profile 🌹</h3>
+    <div className="card w-[320px] md:w[400px] lg:w-[460px] bg-base-100 shadow-2xl mx-auto ">
+      <h3 className='text-center mt-3 text-3xl text-black '>🌹 My Profile 🌹</h3>
 <div className="card-body items-center text-center">
 <h2 className="card-title">Name:{profiles?.user}</h2>
  <h2 className="card-title">Email: {user?.email}</h2> 

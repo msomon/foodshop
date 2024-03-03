@@ -5,12 +5,14 @@ import UseAdmin from '../hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Share/Loading';
+import { signOut } from 'firebase/auth';
 
 const RequireAdmin = ({children}) => {
 
     const [user, loading] = useAuthState(auth);
     const [admin, adminLoading] = UseAdmin(user);
     const location = useLocation();
+
 
     if(loading || adminLoading){
         return <Loading></Loading>
@@ -21,9 +23,8 @@ const RequireAdmin = ({children}) => {
         return <Navigate to="/login" state={{ from: location }} replace></Navigate>
     }
     if(user && !admin){
-        // signOut(auth);
-        return <Navigate to="/dashboard" state={{ from: location }} replace></Navigate>
-
+          signOut(auth);
+        return <Navigate to="/login" state={{ from: location }} replace></Navigate>
     }
     return children;
 };

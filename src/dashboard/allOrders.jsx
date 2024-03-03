@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import React from 'react';
 import Loading from '../Share/Loading';
-import Allorder from './allorder';
+import { toast } from 'react-toastify';
+
 
 const AllOrders = () => {
 
@@ -21,7 +21,18 @@ const AllOrders = () => {
       }
 
 
-      const deleteItem =()=>{
+      const deleteItem = async(item)=>{
+
+        const res = await axios.delete(`http://localhost:5000/admincancelorder/${item._id}`);
+
+        
+        if(res?.data.deletedCount > 0){
+        
+          toast("Cancel Order")
+          refetch()
+        }
+ 
+
         
     }
       
@@ -40,7 +51,7 @@ const AllOrders = () => {
         <div className=''>  
         {
         order.item.map(i =>
-            <div className=' mt-2 flex justify-between items-center ' key={i._name}> 
+            <div key={i.id} className=' mt-2 flex justify-between items-center ' > 
             <h1 className='text-xl' >{i.name}</h1>
             <img className='rounded-lg h-20 w-32 ' src={i.image} ></img>
         </div>
@@ -52,7 +63,7 @@ const AllOrders = () => {
     <h1 className="text">Time:{order.date}</h1>
     <h1 className="">TransId:{order.transactionId}</h1>
     <div className="card-actions justify-center ">
-      <button onClick={()=> deleteItem(data)}   className="btn cartBtn">Cancel Order</button>
+      <button onClick={()=> deleteItem(order)}   className="btn cartBtn">Cancel Order</button>
     </div>
   </div>
    </div>

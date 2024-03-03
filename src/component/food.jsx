@@ -5,14 +5,16 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import CartItem from '../hooks/CartItem';
 import axios from 'axios';
+import useAdmin from '../hooks/useAdmin';
 
-const Test = ({food}) => {
+const Food = ({food}) => {
 
 
     const {_id,name,image,price,description} = food ;
     const navigate = useNavigate()
     const[user] =useAuthState(auth)
     const [cart,refetch] = CartItem()
+    const [admin] = useAdmin(user)
     
 
     const AddtoCart =(item)=>{
@@ -60,11 +62,11 @@ const Test = ({food}) => {
     <p>{description}</p>
     <h1 className="text-xl">${price}</h1>
     <div className="card-actions justify-center ">
-      <button onClick={()=> AddtoCart(food)}   className="btn cartBtn">Add to cart</button>
+      <button disabled={admin ? true : false} onClick={()=> AddtoCart(food)}   className="btn cartBtn">Add to cart</button>
     </div>
   </div>
 </div>
     );
 };
 
-export default Test;
+export default Food;
