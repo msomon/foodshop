@@ -12,9 +12,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './userAuth/RequireAuth'
 import Dashboard from './dashboard/dashboard'
-import Reviews from './dashboard/reviews'
+import Reviews from './component/reviews'
 import AddReview from './dashboard/addReview'
 import MyOrders from './dashboard/myOrders'
+import Payment from './dashboard/Payment'
+import Users from './dashboard/users'
 
 function App() {
  
@@ -39,18 +41,20 @@ function App() {
 
 <Route  path="dashboard" element={<RequireAuth>
 
-  <Dashboard></Dashboard>
-</RequireAuth>}>
-<Route path='myOrders' element={
-<RequireAuth>
-<MyOrders/>
-</RequireAuth>} >  </Route>
+<Dashboard /></RequireAuth>}>
 
+<Route path='myOrders' element={
+<RequireAuth><MyOrders/></RequireAuth>} >  </Route>
+
+
+<Route path='payment' element={
+<RequireAuth><Payment/></RequireAuth>} >  </Route>
 
 <Route path='addreview' element={
-  <RequireAuth> <AddReview/> </RequireAuth>
-} >  </Route>
+  <RequireAuth> <AddReview/> </RequireAuth>} >  </Route>
 
+<Route path='users' element={
+  <RequireAuth> <Users/> </RequireAuth>} >  </Route>
 
 
 </Route>
@@ -58,7 +62,7 @@ function App() {
 
 
     </Routes>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
    
   )

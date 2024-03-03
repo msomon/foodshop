@@ -22,7 +22,7 @@ const Dashboard = () => {
            <h2 className='lg:text-2xl mt-4 sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
 
            {
-       user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost bg-blue-500 w-28 mt-3 ml-52 lg:hidden md:hidden flex justify-end">Dashboard
+       user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="dashboard btn btn-ghost bg-blue-500 w-28 mt-3  lg:hidden md:hidden flex justify-end">Dashboard
       </label>
       }     
     
@@ -32,7 +32,7 @@ const Dashboard = () => {
        
        <div className="drawer-side mt-10 ">
            <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-           <ul className="menu p-4 overflow-y-auto w-32 bg-base-100 text-base-content rounded-lg">
+           <ul className="menu p-4 overflow-y-auto  bg-base-100 text-base-content rounded-lg">
                {/* <!-- Sidebar content here --> */}
                
        
@@ -40,20 +40,20 @@ const Dashboard = () => {
                 (user) && <>
                <li><NavLink to='myorders' >My Orders</NavLink></li>
                <li><NavLink to="addreview">Add Review</NavLink></li>
+
+               <li><Link to="users">Users</Link></li>
+               <li><NavLink to="addproduct">Add Product</NavLink></li>
+               <li><NavLink to="manageorders">Manage All Orders</NavLink></li>
+               <li><NavLink to="manageproducts">Manage All Products</NavLink></li>
                
                    </>
                }
 
 
-               {/* { admin && <>
-               <li><Link to="users">Users</Link></li>
-               <li><NavLink to="addproduct">Add Product</NavLink></li>
-               <li><NavLink to="manageorders">Manage All Orders</NavLink></li>
-               <li><NavLink to="manageproducts">Manage All Products</NavLink></li>
-              
-               </>
+               {/* { admin && <> */}
                
-               } */}
+              
+               {/* </>} */}
                
            </ul>
           

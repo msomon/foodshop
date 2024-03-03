@@ -48,3 +48,8 @@
 
 
 /* this footer section end */
+
+.dashboard{
+
+    transform: translate(180% ,10%);
+}

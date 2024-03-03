@@ -11,7 +11,6 @@ const Test = ({food}) => {
 
     const {_id,name,image,price,description} = food ;
     const navigate = useNavigate()
-    const [quantity ,setQuantity] = useState(1)
     const[user] =useAuthState(auth)
     const [cart,refetch] = CartItem()
     
@@ -30,9 +29,7 @@ const Test = ({food}) => {
                 email:user?.email
               }
         
-          
-       
-      
+        
               axios.put(`http://localhost:5000/addToCart/${item._id}`,cartItem)
                      .then( res =>{
         
@@ -49,21 +46,13 @@ const Test = ({food}) => {
             }
       
       
-           
-        
-        
-      
           }
 
 
 
 
-
-
-
-
     return (
-        <div className="foodCart card card-compact w-96 bg-base-100 shadow-xl justify-center items-center mx-auto">
+        <div className="foodCart card card-compact w-[320px] lg:w-[350px] bg-base-100 shadow-xl justify-center items-center mx-auto">
       
   <figure><img className='h-60 w-60 rounded-lg mt-2' src={image} alt="Shoes" /></figure>
   <div className="card-body justify-center text-center">

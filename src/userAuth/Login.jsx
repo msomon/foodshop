@@ -6,6 +6,7 @@ import Loading from '../Share/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';;
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useToken from '../hooks/useToken';
 
 
 const Login = () => {
@@ -18,7 +19,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-
+    
+    const [token]  = useToken(user || gUser);
     
     let signInError;
     const navigate = useNavigate();
@@ -26,7 +28,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     
-if(user || gUser){
+if(token){
 
     navigate( from, { replace: true });
 }

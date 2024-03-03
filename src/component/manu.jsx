@@ -1,7 +1,6 @@
 
 import Loading from "../Share/Loading";
 import useHooks from "../hooks/useHooks"
-import Food from "./food";
 import Test from "./test";
 
 

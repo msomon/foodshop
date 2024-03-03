@@ -1,10 +1,14 @@
-import React from 'react';
+
 import CartItem from '../hooks/CartItem';
 import Item from './item';
 import Loading from '../Share/Loading';
-import Login from '../userAuth/Login';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
+
+    const [user] = useAuthState(auth)
 
     const [cart] = CartItem()
 
@@ -42,7 +46,8 @@ const Cart = () => {
        }
       
        
-          <button disabled={!cart.length ? true : false}  className='btn btn-success'> Pay</button>
+    
+    <Link disabled={!cart.length ? true : false}  to={"/dashboard/payment"}><button className='btn btn-success' >Pay</button></Link>
          
       </div>
 

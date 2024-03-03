@@ -3,7 +3,7 @@ import About from '../component/About';
 import Foods from '../component/foods';
 import Contact from '../component/Contact';
 import { NavLink } from 'react-router-dom';
-import Reviews from '../dashboard/reviews';
+import Reviews from '../component/reviews';
 
 const Home = () => {
 
