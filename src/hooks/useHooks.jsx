@@ -1,17 +1,17 @@
-import axios from "axios";
+
 import { useQuery } from "@tanstack/react-query";
+import useAxiosPublick from "./useAxiosPublick";
 
 
 
  const useHooks = ()=>{ 
 
+  const axiosPublick = useAxiosPublick()
+
     const { refetch, data } = useQuery({
         queryKey: ['data'],
         queryFn: async () =>{
-       const res = await  axios.get("http://localhost:5000/foods", { headers: {
-        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    }})
-       
+       const res = await axiosPublick.get("/foods")
        return res.data ;
     
     

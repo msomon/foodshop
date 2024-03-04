@@ -2,36 +2,47 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 
-const useToken = (user , name) =>{
+import useAxiosPublick from "./useAxiosPublick";
+const useToken = ( user) =>{
     const [token, setToken] = useState('');
+    const axiosPublick = useAxiosPublick()
    
+
+
 
     useEffect( () =>{
         
-        const email = user?.user?.email;
+        
+        const email =user?.user?.email;
         const name = user?.user?.displayName ;
+
         const currentUser = {
             email: email ,
             name : name
            };
 
-           
+          
+
 
         if(email){
 
-
-        axios.put(`http://localhost:5000/user/${email}`,currentUser)
+        axiosPublick.put(`/user/${email}`,currentUser)
          .then(res=>{
-            const accessToken = res.data.token;
-            localStorage.setItem('accessToken', accessToken);
-            setToken(accessToken);
+            if(res?.data.token){
+                const accessToken = res.data.token;
+                localStorage.setItem('accessToken', accessToken);
+                setToken(accessToken);
+            }
+            
 
        
 })
-
-          
+  
         }else{
-            localStorage.removeItem('accessToken')
+
+
+
+            localStorage.removeItem('accessToken');
         }
 
     }, [user]);

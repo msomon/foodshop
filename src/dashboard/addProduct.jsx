@@ -2,10 +2,13 @@ import axios from 'axios';
 import  { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 const Addproduct = () => {
   const { register,reset, handleSubmit } = useForm();
    const [imageUrl,setImageUrl] = useState("")
+   const axiosSecure = useAxiosSecure()
 
   const onSubmit =async (data) => {
 
@@ -19,8 +22,8 @@ const Addproduct = () => {
        image : imageUrl,
     }
 
-     const url = 'http://localhost:5000/addfooditem'
-     const res = await axios.post(url,serviceData)
+    
+     const res = await axiosSecure.post("/addfooditem",serviceData)
      if(res.data){
        reset()
        setImageUrl("")

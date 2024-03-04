@@ -2,14 +2,17 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Loading from '../Share/Loading';
 import { toast } from 'react-toastify';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 
 const AllOrders = () => {
+  const axiosSecure = useAxiosSecure()
 
     const { refetch, data } = useQuery({
         queryKey: ['allorders'],
         queryFn: async () =>{
-       const res = await axios.get('http://localhost:5000/allorders');
+       const res = await axiosSecure.get('/allorders');
       return res.data ;
     
     }
@@ -23,7 +26,7 @@ const AllOrders = () => {
 
       const deleteItem = async(item)=>{
 
-        const res = await axios.delete(`http://localhost:5000/admincancelorder/${item._id}`);
+        const res = await axiosSecure.delete(`/admincancelorder/${item._id}`);
 
         
         if(res?.data.deletedCount > 0){

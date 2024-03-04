@@ -2,11 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
 import CartItem from '../hooks/CartItem';
+import useAxiosPublick from '../hooks/useAxiosPublick';
 
 const Item = ({item}) => {
     const {_id,name,image,price,quantity,email} = item 
     const [,refetch] = CartItem()
-
+    const axiosPublick = useAxiosPublick()
+    
 
     const shortName = name.split(' ')[0]
 
@@ -17,7 +19,7 @@ const deleteItem = (data)=>{
 
     if(data.quantity <= 1){
 
-        axios.delete(`http://localhost:5000/deleteCartItem/${data._id}`)
+        axiosPublick.delete(`/deleteCartItem/${data._id}`)
         .then(res =>{
            if(res.data.acknowledged){
             toast.success("Delete Successfully")

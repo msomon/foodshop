@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import useAxiosPublick from '../hooks/useAxiosPublick';
 
 
 const CheckoutForm = () => {
@@ -21,12 +22,14 @@ const [user] = useAuthState(auth)
 const navigate = useNavigate()
 
 const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+const axiosPublick = useAxiosPublick()
+    
 
 useEffect( ()=>{
   
-  const url = 'http://localhost:5000/create-payment-intent'
+
    
-    axios.post(url ,{totalSum})
+  axiosPublick.post("/create-payment-intent" ,{totalSum})
     .then(res =>{
       if(res?.data?.clientSecret){
         setClintSecret(res?.data?.clientSecret)
@@ -106,7 +109,7 @@ useEffect( ()=>{
 
 
 
-      axios.post(`http://localhost:5000/payment/${user.email}` , payment )
+      axiosPublick.post(`payment/${user.email}` , payment )
       .then(res =>{
         setProcessing(false)
 

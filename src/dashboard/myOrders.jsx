@@ -4,16 +4,19 @@ import Loading from '../Share/Loading';
 import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 
 const Myorders = () => {
 
+    const axiosSecure = useAxiosSecure()
     const [user] = useAuthState(auth)
 
     const { refetch, data } = useQuery({
         queryKey: ['Myorder'],
         queryFn: async () =>{
-       const res = await axios.get(`http://localhost:5000/myorders/${user.email}`);
+       const res = await axiosSecure.get(`/myorders/${user.email}`);
       return res.data ;
     
     }
@@ -40,7 +43,7 @@ const Myorders = () => {
         <div className=''>  
         {
         order.item.map(i =>
-            <div key={i.id} className=' mt-2 gap-3 flex justify-between items-center ' > 
+            <div key={i._id} className=' mt-2 gap-3 flex justify-between items-center ' > 
             <h1 className='text-xl' >{i.name}</h1>
             <img className='rounded-lg h-20 w-32 ' src={i.image} ></img>
         </div>

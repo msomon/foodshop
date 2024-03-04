@@ -3,8 +3,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useAxiosPublick from '../hooks/useAxiosPublick';
 
 const UpdateMyProfile = () => {
+    const axiosPublick = useAxiosPublick()
+    
 
   const { register,reset ,formState: { errors }, handleSubmit } = useForm();
   const [user] =useAuthState(auth)
@@ -19,16 +22,9 @@ const UpdateMyProfile = () => {
        number : data.number ,
        education: data.education
    }
-   const url = `http://localhost:5000/user/myprofile/${user.email}`;
-   
-   fetch(url,{
-       method:'PUT',
-       headers:{
-          'content-type': 'application/json'
-       },
-       body: JSON.stringify(profiledata)
-   })
-   .then(res=>res.json())
+
+  
+  axiosPublick.put(`/user/myprofile/${user.email}`, profiledata)
    .then(res=>{
      reset()
        toast('Update Profile Successfully')
