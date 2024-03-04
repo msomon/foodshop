@@ -8,7 +8,9 @@ import { useQuery } from "@tanstack/react-query";
     const { refetch, data } = useQuery({
         queryKey: ['data'],
         queryFn: async () =>{
-       const res = await  axios.get("http://localhost:5000/foods")
+       const res = await  axios.get("http://localhost:5000/foods", { headers: {
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    }})
        
        return res.data ;
     

@@ -20,14 +20,18 @@ const useToken = (user , name) =>{
         if(email){
 
 
-    axios.put(`http://localhost:5000/user/${email}`,currentUser)
-    .then(res=>{
-    const accessToken = res.data.token;
-    localStorage.setItem('accessToken', accessToken);
-    setToken(accessToken);
+        axios.put(`http://localhost:5000/user/${email}`,currentUser)
+         .then(res=>{
+            const accessToken = res.data.token;
+            localStorage.setItem('accessToken', accessToken);
+            setToken(accessToken);
+
+       
 })
 
           
+        }else{
+            localStorage.removeItem('accessToken')
         }
 
     }, [user]);

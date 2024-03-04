@@ -38,7 +38,7 @@ const UpdateMyProfile = () => {
 
 
   return (
-    <div className='mx-auto  mb-6 mt-0'>
+    <div className='mx-auto  mb-6 mt-0sm:mt-20 '>
     <div className="card w-80 lg:w-2/4 justify-center bg-base-100 shadow-2xl mx-auto">
         <div className="card-body mx-auto pt-2 ">
             <h2 className="text-center text-green-400 text-xl font-bold mt-0 mb-1">✔ Please Submit Your Information ✔</h2>

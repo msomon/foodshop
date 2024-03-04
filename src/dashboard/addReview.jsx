@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import axios from 'axios';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
+import useAdmin from '../hooks/useAdmin';
 
 const AddReview = () => {
   const [user] = useAuthState(auth);
@@ -13,7 +14,7 @@ const AddReview = () => {
    const [rating, setRating] = useState(4);
    const [imageUrl,setImageUrl] = useState("")
 
-const admin ="false"
+const admin =useAdmin(user)
 
   const onSubmit = data => {
 
@@ -57,7 +58,7 @@ const uploadImage =(data)=>{
 
   return (
 
-    <div className='h-screen lg:mt-20 mt-10 mb-10'>
+    <div className='h-screen lg:mt-20 mt-10  sm:mt-24'>
     <div className=' mx-auto card h-[550px] max-w-lg min-w-80 bg-base-100 shadow-xl px-6 my-8 pb-10 flex justify-center items-center'>
       <h1 className='mt-3 text-2xl mb-4 text-black'> 👍 Please Add Review 👍 </h1>
       <form className='flex flex-col gap-2 ' onSubmit={handleSubmit(onSubmit)}>
@@ -98,7 +99,7 @@ const uploadImage =(data)=>{
      
      {
       user && 
-       <input disabled={!imageUrl ? true : false} className='btn btn-md btn-primary w-40 mx-auto mb-8 mt-4 ' type="submit" value='Add Review' /> 
+       <input disabled={!imageUrl || admin ? true : false} className='btn btn-md btn-primary w-40 mx-auto mb-8 mt-4 ' type="submit" value='Add Review' /> 
 
      }
 

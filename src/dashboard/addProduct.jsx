@@ -47,7 +47,7 @@ const Addproduct = () => {
 
 
   return (
-    <div className='h-80vh items-center mx-auto card max-w-lg min-w-80 bg-base-100 shadow-xl px-6 mt-8 mb-10'>
+    <div className='h-80vh items-center mx-auto card max-w-lg min-w-80 bg-base-100 shadow-xl px-6 mt-8 mb-10 sm:mt-20 '>
       <h1 className='mt-3 text-2xl mb-4 text-secondary'> 🎁 Please Add Product 🎁 </h1>
       <form className='flex flex-col gap-2 ' onSubmit={handleSubmit(onSubmit)}>
       <label className="label">

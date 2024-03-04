@@ -45,9 +45,11 @@ const Cart = () => {
        {cart.length &&  <h1  className='text-xl'>Total:${totalSum + 1}</h1>
        }
       
-       
+       {
+
+        cart.length &&   <Link disabled={cart.length < 0  ? true : false}  to={"/dashboard/payment"}><button className='btn btn-success' >Pay</button></Link>
+       }
     
-    <Link disabled={!cart.length ? true : false}  to={"/dashboard/payment"}><button className='btn btn-success' >Pay</button></Link>
          
       </div>
 

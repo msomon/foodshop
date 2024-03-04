@@ -23,7 +23,7 @@ const [cart] = CartItem()
         <li ><NavLink className='sm:w-20 justify-center' to='/'>Home</NavLink></li>
         <li><NavLink className='sm:w-20 justify-center'  to="/manu">Manu</NavLink></li>
 
-        <li className='relative'><NavLink className='sm:w-20 justify-center '  to="/cart" ><div className="badge text-red-600 absolute -mt-10 -mr-6">+{cart?.length}</div><BsCart3 className='text-2xl' /> </NavLink></li>
+       { !admin && <li className='relative'><NavLink className='sm:w-20 justify-center '  to="/cart" ><div className="badge text-red-600 absolute -mt-10 -mr-6">+{cart?.length}</div><BsCart3 className='text-2xl' /> </NavLink></li>}
 
         <li className='sm:block md:hidden ms-3 lg:hidden'><NavLink className='sm:w-20 justify-center'  to="/dashboard">Dashboard</NavLink></li>
 

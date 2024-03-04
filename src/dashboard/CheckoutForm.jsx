@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 
+
 const CheckoutForm = () => {
   const stripe = useStripe()
 const elements =useElements()
@@ -15,7 +16,7 @@ const[success ,setSuccess] = useState('');
 const[processing ,setProcessing] = useState(false)
 const[transactionId ,setTransactionId] = useState('');
 const [clintSecret ,setClintSecret] = useState('');
-const [cart] = CartItem()
+const [cart ,refetch] = CartItem()
 const [user] = useAuthState(auth)
 const navigate = useNavigate()
 
@@ -29,6 +30,7 @@ useEffect( ()=>{
     .then(res =>{
       if(res?.data?.clientSecret){
         setClintSecret(res?.data?.clientSecret)
+        
       }
       
     })
@@ -55,12 +57,13 @@ useEffect( ()=>{
       card 
 
     })
+
     if(error){
-      // console.log(error ,"card error");
+      
       setCardErr(error ? error.message : '')
       setSuccess('')
     }else{
-      // console.log(paymentMethod , "payment mathood" );
+    
       setProcessing(true)
     }
 
@@ -85,13 +88,17 @@ useEffect( ()=>{
     
     }else{
       setCardErr('')
-      setTransactionId(paymentIntent?.id)
-      setSuccess('Your Payment Is Completed')
-
+      
+      if(paymentIntent.status == "succeeded"){
+        
+        setTransactionId(paymentIntent?.id)
+        setSuccess('Your Payment Is Completed')
+        refetch()
+      }
       //  store payment in database  //
       const payment={
         transactionId : paymentIntent.id ,
-        date:new Date() ,
+        date: new Date() ,
         total:totalSum ,
         email:user?.email,
         item: cart?.map(item=>item)
@@ -112,7 +119,7 @@ useEffect( ()=>{
   }
 
 
-  
+
  
 
   return (
@@ -134,7 +141,7 @@ useEffect( ()=>{
           },
         }}
       />
-      <button className='btn btn-success btn-sm mt-3' type="submit" disabled={ success || !stripe || !clintSecret}>
+      <button className='btn btn-success btn-sm mt-3' type="submit" disabled={  success || !stripe || !clintSecret}>
         Pay
       </button>
       

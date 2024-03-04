@@ -7,18 +7,18 @@ const Contact = () => {
   const { register, formState: { errors }, handleSubmit ,reset } = useForm();
 
   const sendEmail = async (e) => {
-    console.log(e.target);
+  
     e.preventDefault();
-    emailjs.sendForm('service_gu2xg1r', 'template_yw6ejpj', e.target, 'VjdqwJv2RVXPZNrYM')
+    emailjs.sendForm('service_z9i9y89', 'template_lijh3s7', e.target, 'VjdqwJv2RVXPZNrYM')
     .then((result) => {
-      console.log(result);
+     
       toast.success('Email Send Succesfully')
       reset()
-        // console.log(result.text);
+      
     }, (error) => {
-        // console.log(error.text);
+        
     });
-    // console.log(data);
+    
 
   }
   return (

@@ -18,18 +18,25 @@ const Dashboard = () => {
             
         {/* <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">Dashboard
       </label> */}
-       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
-       <div className="drawer-content">
-           <h2 className='lg:text-2xl mt-4 mb-7 lg:mb-10 sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
+       <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle "  />
 
-           {
-       user&&  <label tabIndex="1" htmlFor="dashboard-sidebar" className="dashboard ml-52 btn btn-ghost bg-blue-500 w-28 mt-3 mb-2  lg:hidden md:hidden flex justify-end">Dashboard
-      </label>
-      }     
-    
+{ user &&
+       <div className="drawer-content dashboard ">
+
+        <div>
+        <h2 className='lg:text-2xl mt-4 mb-7 lg:mb-10 sm:text-sm ml-4 font-bold text-purple-500'>Welcome <span className='text-primary'>{user?.displayName}</span> to your Dashboard</h2>
+        </div>
+         
+        <div className='dashboard-btn  '>
+
+        <label tabIndex="1" htmlFor="dashboard-sidebar" className="dashboard  btn btn-ghost bg-blue-500 w-28   lg:hidden md:hidden ">Dashboard
+        </label>
+        </div>
            
-           <Outlet></Outlet>
-       </div>
+           <Outlet ></Outlet>
+       </div>}
+
+
        
        <div className="drawer-side mt-10 ">
            <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
