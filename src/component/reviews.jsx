@@ -2,21 +2,18 @@
 import { useEffect, useState } from "react";
 import Loading from "../Share/Loading";
 import Review from "./review";
+import useAxiosPublick from "../hooks/useAxiosPublick";
+import axios from "axios";
 
 const Reviews = () => {
-
     const [reviews ,setReviews] = useState([])
 
 
    
 
 
-
-    useEffect( ()=>{
-       fetch("http://localhost:5000/reviews")
-       .then(res => res.json())
-       .then(data =>setReviews(data))
-    },[])
+    axios.get("review.json")
+    .then(data => setReviews(data?.data))
 
 
     if(!reviews){

@@ -4,24 +4,31 @@ import Item from './item';
 import Loading from '../Share/Loading';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import MyprofileData from '../hooks/myProfileData';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
 
     const [user] = useAuthState(auth)
-
+    const [data] = MyprofileData()
+    const navigate = useNavigate()
     const [cart] = CartItem()
 
-    if(!cart){
-      return <Loading></Loading>
-    }
 
-    
-
-  
     const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
+const payMoney=()=>{
+    if(data == "" ) {
+        
+        toast("Please add your information");
+        navigate("/dashboard/myprofile")
+       
+       } else{
 
+            navigate("/dashboard/payment")
+       }
+}
 
     
 
@@ -47,7 +54,7 @@ const Cart = () => {
       
        {
 
-        cart.length &&   <Link disabled={cart.length < 0  ? true : false}  to={"/dashboard/payment"}><button className='btn btn-success' >Pay</button></Link>
+        cart.length &&  <button onClick={payMoney} disabled={cart.length < 0  ? true : false}  className='btn btn-success' >Pay</button>
        }
     
          

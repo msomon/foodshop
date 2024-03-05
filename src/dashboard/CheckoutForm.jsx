@@ -7,6 +7,8 @@ import auth from '../../firebase.init';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import useAxiosPublick from '../hooks/useAxiosPublick';
+import MyprofileData from '../hooks/myProfileData';
+import { toast } from 'react-toastify';
 
 
 const CheckoutForm = () => {
@@ -20,6 +22,8 @@ const [clintSecret ,setClintSecret] = useState('');
 const [cart ,refetch] = CartItem()
 const [user] = useAuthState(auth)
 const navigate = useNavigate()
+const [data] = MyprofileData()
+
 
 const totalSum = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 const axiosPublick = useAxiosPublick()
@@ -27,16 +31,18 @@ const axiosPublick = useAxiosPublick()
 
 useEffect( ()=>{
   
+{ totalSum >= 1 &&
 
-   
-  axiosPublick.post("/create-payment-intent" ,{totalSum})
+  axios.post("http://localhost:5000/create-payment-intent" ,{totalSum })
     .then(res =>{
       if(res?.data?.clientSecret){
         setClintSecret(res?.data?.clientSecret)
         
       }
-      
     })
+
+}
+   
    
     
   },[totalSum])
@@ -99,19 +105,24 @@ useEffect( ()=>{
         refetch()
       }
       //  store payment in database  //
+
+     
+
       const payment={
         transactionId : paymentIntent.id ,
         date: new Date() ,
         total:totalSum ,
         email:user?.email,
+        address:data.address ,
+        number: data.number,
         item: cart?.map(item=>item)
       }
 
 
-
-      axiosPublick.post(`payment/${user.email}` , payment )
+      axios.post(`http://localhost:5000/payment/${user.email}` , payment )
       .then(res =>{
         setProcessing(false)
+        refetch()
 
       })
 

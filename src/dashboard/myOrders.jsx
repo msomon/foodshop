@@ -1,33 +1,28 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Loading from '../Share/Loading';
-import { toast } from 'react-toastify';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 
 
 const Myorders = () => {
 
-    const axiosSecure = useAxiosSecure()
     const [user] = useAuthState(auth)
 
     const { refetch, data } = useQuery({
         queryKey: ['Myorder'],
         queryFn: async () =>{
-       const res = await axiosSecure.get(`/myorders/${user.email}`);
+       const res = await axios.get(`http://localhost:5000/myorders/${user?.email}`);
       return res.data ;
     
     }
       })
 
 
-      if(!data){
-        return <Loading></Loading>
-      }
-
-
+  
 
     return (
         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-3 lg:gap-5 sm:mt-20'>
@@ -53,6 +48,8 @@ const Myorders = () => {
         <h2 className="text-2xl font-bold text-success ">{order.email}</h2>
     <h1 className="text-xl"><span className='font-bold text-success'>Total:</span> {order.total}</h1>
     <h1 className="text-xl"><span className='font-bold text-success'>Time:</span> {order.date.slice(0,10)}</h1>
+    <h1 className="text-xl"><span className='font-bold text-success'>Address:</span> {order?.address}</h1>
+    <h1 className="text-xl"><span className='font-bold text-success'>Mobile:</span> {order?.number}</h1>
     <h1 className="text-xl"><span className='font-bold text-success'>TransId:</span> {order.transactionId.slice(1,15)}</h1>
     <h1 className=" btn btn-disabled">Paid</h1>
     

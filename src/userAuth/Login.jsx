@@ -43,7 +43,7 @@ if(token){
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
     }
 
-    const resetPassword =async()=>{
+    const resetPassword = async()=>{
         const email = watch('email');
         await sendPasswordResetEmail(email);
         toast('Reset email');

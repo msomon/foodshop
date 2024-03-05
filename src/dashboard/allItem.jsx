@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router';
+
+
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
-import CartItem from '../hooks/CartItem';
+
 import axios from 'axios';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 const  AllItem= ({food,refetch }) => {
-  const axiosSecure = useAxiosSecure()
+
 
     const {_id,name,image,price,description} = food ;
    
 
     const DeleteFromItems =(item)=>{
     
-      axiosSecure.delete(`/deleteitem/${item._id}`)
+      axios.delete(`http://localhost:5000/deleteitem/${item._id}`)
                      .then( res =>{
         
                       if(res.data){

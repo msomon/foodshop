@@ -1,10 +1,9 @@
 import axios from 'axios';
-import React from 'react';
 import { toast } from 'react-toastify';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 const User = ({user,refetch}) => {
-    const axiosSecure = useAxiosSecure()
+
 
     const {name,email,role} = user ;
 
@@ -12,7 +11,7 @@ const User = ({user,refetch}) => {
 
     const makeAdmin =(email)=>{
 
-    axiosSecure.put(`/users/admin/${email}`)
+    axios.put(`http://localhost:5000/users/admin/${email}`)
     .then(res=>{
 
        if(res.status == "404"){

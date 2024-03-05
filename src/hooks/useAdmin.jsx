@@ -1,9 +1,8 @@
 
 import { useEffect, useState } from "react"
-import useAxiosSecure from "./useAxiosSecure";
+import axios from "axios";
 
 const useAdmin = user => {
-    const axiosSecure = useAxiosSecure()
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
 
@@ -14,10 +13,10 @@ const useAdmin = user => {
         if(email){
 
    
-        axiosSecure.get(`/users/admin/${email}`)
+        axios.get(`http://localhost:5000/users/admin/${email}`)
      .then(res=>{
     
-     setAdmin(res.data.admin)
+     setAdmin(res.data?.admin)
         setAdminLoading(false)
         })
             

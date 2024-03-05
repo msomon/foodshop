@@ -2,17 +2,17 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Loading from '../Share/Loading';
 import { toast } from 'react-toastify';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+
 
 
 
 const AllOrders = () => {
-  const axiosSecure = useAxiosSecure()
+
 
     const { refetch, data } = useQuery({
         queryKey: ['allorders'],
         queryFn: async () =>{
-       const res = await axiosSecure.get('/allorders');
+       const res = await axios.get('http://localhost:5000/allorders');
       return res.data ;
     
     }
@@ -26,7 +26,7 @@ const AllOrders = () => {
 
       const deleteItem = async(item)=>{
 
-        const res = await axiosSecure.delete(`/admincancelorder/${item._id}`);
+        const res = await axios.delete(`http://localhost:5000/admincancelorder/${item._id}`);
 
         
         if(res?.data.deletedCount > 0){
@@ -64,6 +64,8 @@ const AllOrders = () => {
     <h2 className="text-2xl font-bold text-success ">{order.email}</h2>
     <h1 className="text-xl"><span className='font-bold text-success'>Total:</span> {order.total}</h1>
     <h1 className="text-xl"><span className='font-bold text-success'>Time:</span> {order.date.slice(0,10)}</h1>
+    <h1 className="text-xl"><span className='font-bold text-success'>Address:</span> {order?.address}</h1>
+    <h1 className="text-xl"><span className='font-bold text-success'>Mobile:</span> {order?.number}</h1>
     <h1 className="text-xl"><span className='font-bold text-success'>TransId:</span> {order.transactionId.slice(1,15)}</h1>
 
  

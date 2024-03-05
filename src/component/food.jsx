@@ -5,7 +5,8 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import CartItem from '../hooks/CartItem';
 import useAdmin from '../hooks/useAdmin';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+import axios from 'axios';
+
 
 const Food = ({food}) => {
 
@@ -19,7 +20,7 @@ const Food = ({food}) => {
 
     const AddtoCart =(item)=>{
     
-      const axiosSecure = useAxiosSecure()
+      
     
         const selected = cart?.find(data=> data?.name == item?.name );
 
@@ -34,7 +35,7 @@ const Food = ({food}) => {
               }
         
         
-              axiosSecure.put(`/addToCart/${item._id}`,cartItem)
+              axios.put(`http://localhost:5000/addToCart/${item._id}`,cartItem)
                      .then( res =>{
         
                       if(res.data){
