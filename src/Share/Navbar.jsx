@@ -23,9 +23,9 @@ const [cart] = CartItem()
         <li ><NavLink className='sm:w-20 justify-center' to='/'>Home</NavLink></li>
         <li><NavLink className='sm:w-20 justify-center'  to="/manu">Manu</NavLink></li>
 
-       { !admin && <li className='relative'><NavLink className='sm:w-20 justify-center '  to="/cart" ><div className="badge text-red-600 absolute -mt-10 -mr-6">+{cart?.length}</div><BsCart3 className='text-2xl' /> </NavLink></li>}
+       { !admin && <li className='relative'><NavLink className='sm:w-20 justify-center '  to="/cart" ><div className="badge text-red-600 absolute -mt-6 -mr-4 lg:-mt-10 lg:-mr-6">+{cart?.length}</div><BsCart3 className='text-2xl' /> </NavLink></li>}
 
-        <li className='sm:block md:hidden ms-3 lg:hidden'><NavLink className='sm:w-20 justify-center'  to="/dashboard">Dashboard</NavLink></li>
+        {user && <li className='sm:block md:hidden ms-3 lg:hidden'><NavLink className='sm:w-20 justify-center'  to="/dashboard">Dashboard</NavLink></li>}
 
      {user && 
         <div className="dropdown sm:hidden md:block  lg:block dropdown-hover  mt-2 ">
@@ -65,7 +65,7 @@ const [cart] = CartItem()
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </div>
        
-        <ul  tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-40 p-2 shadow bg-base-100 rounded-box w-32 gap-3 h-fit pb-2 ">
+        <ul  tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-40 p-2 shadow bg-base-100 rounded-box w-32 gap-3 sm:gap-4 h-fit pb-6 ">
        {manuItem}
       
         </ul>

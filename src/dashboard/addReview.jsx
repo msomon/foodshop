@@ -8,13 +8,17 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
 import useAdmin from '../hooks/useAdmin';
 
+
 const AddReview = () => {
   const [user] = useAuthState(auth);
   const { register,reset,formState: { errors }, handleSubmit } = useForm();
    const [rating, setRating] = useState(4);
    const [imageUrl,setImageUrl] = useState("")
 
-const admin =useAdmin(user)
+const admin = useAdmin(user)
+
+
+console.log(imageUrl);
 
   const onSubmit = data => {
 
@@ -99,7 +103,7 @@ const uploadImage =(data)=>{
      
      {
       user && 
-       <input disabled={!imageUrl || admin ? true : false} className='btn btn-md btn-primary w-40 mx-auto mb-8 mt-4 ' type="submit" value='Add Review' /> 
+       <input disabled={!imageUrl || !admin ? true : false} className='btn btn-md btn-primary w-40 mx-auto mb-8 mt-4 ' type="submit" value='Add Review' /> 
 
      }
 

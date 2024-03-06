@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Loading from "../Share/Loading";
 import Review from "./review";
-import useAxiosPublick from "../hooks/useAxiosPublick";
+
 import axios from "axios";
 
 const Reviews = () => {
@@ -12,7 +12,7 @@ const Reviews = () => {
    
 
 
-    axios.get("review.json")
+    axios.get("https://foodshop-server.onrender.com/reviews")
     .then(data => setReviews(data?.data))
 
 
