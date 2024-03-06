@@ -11,7 +11,7 @@ const User = ({user,refetch}) => {
 
     const makeAdmin =(email)=>{
 
-    axios.put(`http://localhost:5000/users/admin/${email}`)
+    axios.put(`https://foodshop-server.onrender.com/users/admin/${email}`)
     .then(res=>{
 
        if(res.status == "404"){

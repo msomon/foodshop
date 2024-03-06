@@ -14,7 +14,7 @@ import {useQuery} from '@tanstack/react-query'
         const { refetch, data:cart } = useQuery({
             queryKey: ['cart'],
             queryFn: async () =>{
-           const res = await axios.get(`http://localhost:5000/carts?email=${user?.email}`,);
+           const res = await axios.get(`https://foodshop-server.onrender.com/carts?email=${user?.email}`,);
 
           return res.data ;
         

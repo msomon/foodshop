@@ -12,7 +12,7 @@ const AllOrders = () => {
     const { refetch, data } = useQuery({
         queryKey: ['allorders'],
         queryFn: async () =>{
-       const res = await axios.get('http://localhost:5000/allorders');
+       const res = await axios.get('https://foodshop-server.onrender.com/allorders');
       return res.data ;
     
     }
@@ -26,7 +26,7 @@ const AllOrders = () => {
 
       const deleteItem = async(item)=>{
 
-        const res = await axios.delete(`http://localhost:5000/admincancelorder/${item._id}`);
+        const res = await axios.delete(`https://foodshop-server.onrender.com/admincancelorder/${item._id}`);
 
         
         if(res?.data.deletedCount > 0){

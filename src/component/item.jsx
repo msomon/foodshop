@@ -40,7 +40,7 @@ const deleteItem = (data)=>{
 
         
     
-          axios.put(`http://localhost:5000/updateCartItem/${data._id}`,deleteItem)
+          axios.put(`https://foodshop-server.onrender.com/updateCartItem/${data._id}`,deleteItem)
                  .then( res =>{
     
                   if(res.data.acknowledged){

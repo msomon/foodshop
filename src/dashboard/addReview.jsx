@@ -28,7 +28,7 @@ const admin =useAdmin(user)
     }
     
 
-    axios.post('http://localhost:5000/addreview',review)
+    axios.post('https://foodshop-server.onrender.com/addreview',review)
     .then(res=> {
         if(res.data.insertedId){
             reset()

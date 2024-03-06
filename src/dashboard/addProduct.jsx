@@ -23,7 +23,7 @@ const Addproduct = () => {
     }
 
     
-     const res = await axios.post("http://localhost:5000/addfooditem",serviceData)
+     const res = await axios.post("https://foodshop-server.onrender.com/addfooditem",serviceData)
      if(res.data){
        reset()
        setImageUrl("")

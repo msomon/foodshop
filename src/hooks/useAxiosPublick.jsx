@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublick = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://foodshop-server.onrender.com'
    
 })
 

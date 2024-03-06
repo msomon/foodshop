@@ -14,7 +14,7 @@ const  AllItem= ({food,refetch }) => {
 
     const DeleteFromItems =(item)=>{
     
-      axios.delete(`http://localhost:5000/deleteitem/${item._id}`)
+      axios.delete(`https://foodshop-server.onrender.com/deleteitem/${item._id}`)
                      .then( res =>{
         
                       if(res.data){

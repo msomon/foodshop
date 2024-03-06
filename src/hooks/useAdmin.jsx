@@ -13,7 +13,7 @@ const useAdmin = user => {
         if(email){
 
    
-        axios.get(`http://localhost:5000/users/admin/${email}`)
+        axios.get(`https://foodshop-server.onrender.com/users/admin/${email}`)
      .then(res=>{
     
      setAdmin(res.data?.admin)

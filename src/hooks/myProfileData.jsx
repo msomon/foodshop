@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 
 useEffect( ()=>{
 
-    const res = axios.get(`http://localhost:5000/user/myprofile/${user?.email}`)
+    const res = axios.get(`https://foodshop-server.onrender.com/user/myprofile/${user?.email}`)
        .then( res =>setData(res.data) )
   
 },[])

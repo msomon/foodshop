@@ -33,7 +33,7 @@ useEffect( ()=>{
   
 { totalSum >= 1 &&
 
-  axios.post("http://localhost:5000/create-payment-intent" ,{totalSum })
+  axios.post("https://foodshop-server.onrender.com/create-payment-intent" ,{totalSum })
     .then(res =>{
       if(res?.data?.clientSecret){
         setClintSecret(res?.data?.clientSecret)
@@ -119,7 +119,7 @@ useEffect( ()=>{
       }
 
 
-      axios.post(`http://localhost:5000/payment/${user.email}` , payment )
+      axios.post(`https://foodshop-server.onrender.com/payment/${user.email}` , payment )
       .then(res =>{
         setProcessing(false)
         refetch()

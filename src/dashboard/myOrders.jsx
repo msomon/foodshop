@@ -15,7 +15,7 @@ const Myorders = () => {
     const { refetch, data } = useQuery({
         queryKey: ['Myorder'],
         queryFn: async () =>{
-       const res = await axios.get(`http://localhost:5000/myorders/${user?.email}`);
+       const res = await axios.get(`https://foodshop-server.onrender.com/myorders/${user?.email}`);
       return res.data ;
     
     }

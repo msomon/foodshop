@@ -35,7 +35,7 @@ const Food = ({food}) => {
               }
         
         
-              axios.put(`http://localhost:5000/addToCart/${item._id}`,cartItem)
+              axios.put(`https://foodshop-server.onrender.com/addToCart/${item._id}`,cartItem)
                      .then( res =>{
         
                       if(res.data){
