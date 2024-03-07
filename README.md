@@ -1,64 +1,50 @@
 
 # Food Shop
 
-
 ## Testing Admin Panel :
 
    Email:testing@gmail.com         
    
    Password:123456
+
  
-##    Client Code: https://github.com/msomon/manufacturer-website-client
+   ##   Live Site: https://foodshop1.vercel.app
 
-##   Server Code: https://github.com/msomon/manufacturer-website-server
+   ##  Server Code: https://github.com/msomon/foodshop-server
 
-##   Live Site: https://electronics-manufacturer.web.app
+   ##  Client Code: https://github.com/msomon/foodshop-clint
 
 
+Overview
+This repository contains the source code for a food shop website built using React. The website allows users to browse, select, and order food items. Below are the key features and instructions for setting up and running the project.
 
-## Overview
-
-This repository contains the source code for a React-based E-Commerce website. The application is designed to provide a seamless and user-friendly online shopping experience. Below are the key features and instructions for setting up and running the application.
-
-### Features : 
-
+Features
 1. Responsive Design
-The website is designed to be responsive and accessible across various devices, ensuring a consistent and optimal user experience on desktops, tablets, and mobile phones.
-2. Product Catalog
-Display a comprehensive product with relevant details such as product name, price, and images.
+The website is designed to provide a seamless user experience across various devices, including desktops, tablets, and mobile phones.
 
-3. Shopping Cart
-Implement a user-friendly shopping cart system that allows users to easily add, remove, and update items.
-Provide real-time updates on the cart total and item count.
+2. User Authentication
+Users can create accounts, log in, and manage their profiles. Authentication ensures a secure and personalized shopping experience.
 
-4. User Authentication
-Implement user authentication to allow users to create accounts, log in, and securely manage their personal information.
-Ensure password encryption and secure authentication practices.
+
+4. Shopping Cart
+The website includes a shopping cart feature that allows users to add and remove items. The cart updates dynamically, providing users with a summary of their selected items.
 
 5. Checkout Process
-Facilitate a smooth checkout process with multiple payment options.
-Include order summary and confirmation to keep users informed about their purchase.
+A simple and intuitive checkout process guides users through providing necessary information and completing their orders.
 
 6. Order History
-Allow registered users to view their order history, providing a record of their past purchases.
+Registered users can view their order history, making it convenient to track past purchases and reorder favorite items.
 
 7. Admin Dashboard
-Develop an admin dashboard with features like product management, order processing, and user management.
-Ensure secure access and authentication for admin users.
+An admin dashboard is available for managing products, categories, and user orders. Admins can also view analytics and track sales.
 
-8. Performance Optimization
-Implement code splitting and lazy loading to optimize page load times.
-Utilize React's virtual DOM for efficient rendering and improved performance.
-
-9. State Management
-Utilize state management tools such as Redux to efficiently manage and update the application state.
-Ensure a predictable state flow for seamless user interactions.
 
 
 
 
 Contribution
-If you would like to contribute to the project, please contact me.
+If you would like to contribute to the project, please follow the guidelines outlined in the CONTRIBUTING.md file.
+
 
 
 
@@ -105,13 +91,13 @@ Clone this repository to your local machine.
 
 ### Run the command 
 
-git clone https://github.com/msomon/manufacturer-website-client
+git clone https://github.com/msomon/foodshop-clint
 
-git clone https://github.com/msomon/manufacturer-website-server
+git clone https://github.com/msomon/foodshop-server
 
 npm install 
 
-cd manufacturer-website-clint ||  manufacturer-website-server
+cd foodshop-clint ||  foodshop-server
 
 
 
