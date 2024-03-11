@@ -1,11 +1,11 @@
 
 import { Navigate, useLocation } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import UseAdmin from '../hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
 import Loading from '../Share/Loading';
-import { signOut } from 'firebase/auth';
+import { signOut } from "firebase/auth";
+import auth from '../../firebase.init';
+
 
 const RequireAdmin = ({children}) => {
 

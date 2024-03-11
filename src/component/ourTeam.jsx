@@ -39,7 +39,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="../src/assets/team.jpg" alt="Shoes" className="rounded-xl h-32 w-24" />
+    <img src="../src/assets/team.jpg" alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Jimmey Aenderson</h2>
@@ -52,7 +52,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Shoes" className="rounded-xl h-32 w-24" />
+    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Harry Boy</h2>
@@ -65,7 +65,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="../src/assets/team2.webp" alt="Shoes" className="rounded-xl h-32 w-24" />
+    <img src="../src/assets/team2.webp" alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Lokisoon Fui</h2>
@@ -78,7 +78,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Shoes" className="rounded-xl h-32 w-24" />
+    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Ander Betis</h2>
@@ -91,7 +91,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="../src/assets/team2.webp" alt="Shoes" className="rounded-xl h-32 w-24" />
+    <img src="../src/assets/team2.webp" alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Hira Butik</h2>
@@ -104,7 +104,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Shoes" className="rounded-xl h-32 w-24" />
+    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Sinci Pali</h2>

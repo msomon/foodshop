@@ -1,24 +1,18 @@
 
 import { Rating } from "@smastrom/react-rating";
-import { useEffect } from "react";
-import { IoStar } from "react-icons/io5";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
+
 
 const Review = ({review}) => {
  const {customer_name,id,comment,image,rating} = review ; 
 
 
- useEffect( ()=>{
-  AOS.init({
-    disable: 'mobile'
-  });
-},[])
+ 
 
 
     return (
         <div  data-aos="flip-right"
-        data-aos-duration="1500">
+        data-aos-duration="1500" >
           
     <div className="card h-[400px] min-w-[200px] max-w-[280px] glass mx-auto bg-white z-1">
     <figure>

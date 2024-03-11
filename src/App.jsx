@@ -22,8 +22,17 @@ import AllOrders from './dashboard/allOrders'
 import MyProfile from './dashboard/MyProfile'
 import UpdateMyProfile from './dashboard/UpdateMyProfile'
 import AllItems from './dashboard/allItems'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 function App() {
+
+  useEffect( ()=>{
+    AOS.init({
+      disable: 'mobile'
+    });
+  },[])
  
 
   return (
