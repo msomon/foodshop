@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router';
 import auth from '../../firebase.init';
@@ -8,7 +8,11 @@ import useAdmin from '../hooks/useAdmin';
 import axios from 'axios';
 
 
+
 const Food = ({food}) => {
+
+
+ 
 
 
     const {_id,name,image,price,description} = food ;
@@ -57,18 +61,20 @@ const Food = ({food}) => {
 
 
     return (
-        <div className="foodCart card card-compact w-[320px] lg:w-[350px] bg-base-100 shadow-xl justify-center items-center mx-auto">
-      
-  <figure><img className='h-60 w-60 rounded-lg mt-2' src={image} alt="Shoes" /></figure>
-  <div className="card-body justify-center text-center">
-    <h2 className="text-2xl">{name}</h2>
-    <p>{description}</p>
-    <h1 className="text-xl">${price}</h1>
-    <div className="card-actions justify-center ">
-      <button disabled={admin ? true : false} onClick={()=> AddtoCart(food)}   className="btn cartBtn">Add to cart</button>
+     
+    <div className="foodCart card card-compact w-[320px] lg:w-[350px] bg-base-100 shadow-xl justify-center items-center mx-auto">
+    <figure><img className='h-60 w-60 rounded-lg mt-2' loading='lazy' src={image} alt="Shoes" /></figure>
+    <div className="card-body justify-center text-center">
+      <h2 className="text-2xl">{name}</h2>
+      <p>{description}</p>
+      <h1 className="text-xl">${price}</h1>
+      <div className="card-actions justify-center ">
+        <button disabled={admin ? true : false} onClick={()=> AddtoCart(food)}   className="btn cartBtn">Add to cart</button>
+      </div>
     </div>
   </div>
-</div>
+
+   
     );
 };
 

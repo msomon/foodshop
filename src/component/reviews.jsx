@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loading from "../Share/Loading";
 import Review from "./review";
 
@@ -10,10 +10,12 @@ const Reviews = () => {
 
 
    
-
-
+useEffect( ()=>{
     axios.get("https://foodshop-server.onrender.com/reviews")
     .then(data => setReviews(data?.data))
+
+},[])
+
 
 
     if(!reviews){
@@ -21,7 +23,6 @@ const Reviews = () => {
     }
     
 
-  
     return (
 
 

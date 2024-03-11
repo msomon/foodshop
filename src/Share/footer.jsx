@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-      <div className=' footer mt-20'>
+      <div className='  mt-20 '>
 
 
 
-  <footer className="footer w-full p-10  text-info -z-1 mx-auto mt-3  items-center ">
+  <footer className=" footer  w-full p-10  text-info  mx-auto mt-3  items-center  ">
     
 
   <div className='

@@ -6,6 +6,15 @@
 
 /* home */
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
 .home{
     background-image: linear-gradient(to top, #f6f6ff, #edeefc, #e3e7fa, #d8dff7, #cdd8f5, #c1d9f8, #b3dbfa, #a4ddf9, #97e6f3, #99eee5, #acf2d0, #caf4bb);
 
@@ -21,33 +30,7 @@
 
 
 
-.footer{
-    background-color: #00B4E2;
-}
 
-.custom-shape-divider-top-1708835377 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-top-1708835377 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 66px;
-}
-
-.custom-shape-divider-top-1708835377 .shape-fill {
-    fill: #f8f7f7;
-}
-
-
-/* this footer section end */
 
 .dashboard{
 
@@ -60,3 +43,68 @@
     right: 5px;
    
 }
+
+/* freeDelivery section */
+
+.freeDelivery{
+    background-image: url("../src/assets/heroBanner.jpg")
+}
+.freeDeliveryDiv{
+    background-color:#FAF8FF;
+}
+
+
+/* bestfood */
+
+.bestfood{
+    position: relative;
+   background-color:"bg-base-200";
+
+}
+
+.bestfood:before{
+    
+    position: absolute;
+    width: 100%;
+    height:20%;
+    content:"";
+    background:inherit;
+    top: 0;
+    bottom:0;
+    right:0;
+    left: 0;
+    transform-origin:top right;
+    transform: skewY(4deg);
+
+}
+
+
+
+
+/* this footer section start */
+
+.footer{
+    background-color: #00B4E2;
+    position: relative;
+   
+}
+
+.footer::before{
+
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    content:"";
+    background:inherit;
+    top: 0;
+    bottom:0;
+    right:0;
+    left: 0;
+    transform-origin:top right;
+    transform: skewY(2deg);
+}
+
+
+
+
+/* this footer section end */
