@@ -1,17 +1,17 @@
 
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublick from "./useAxiosPublick";
+import axios from "axios";
 
 
 
  const useHooks = ()=>{ 
 
-  const axiosPublick = useAxiosPublick()
+
 
     const { refetch, data } = useQuery({
         queryKey: ['data'],
         queryFn: async () =>{
-       const res = await axiosPublick.get("/foods")
+       const res = await axios.get("https://foodshop-server.onrender.com/foods")
        return res.data ;
     
     

@@ -56,6 +56,7 @@ if(token){
     }
 
     return (
+        <div>
         <div className='flex justify-center items-center lg:mt-5 lg:mb-12 sm:mt-2 mb-5 '>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body  pt-1 ">
@@ -124,6 +125,12 @@ if(token){
                 </div>
             </div>
         </div >
+            <div className='card w-52 bg-base-100 shadow-xl grid justify-center items-center mx-auto p-3'>  
+                <h1 className='text-2xl text-center '>Admin</h1>
+                <h1 className='text-xl text-center '>testing@gmail.com </h1>
+                <h1 className='text-xl text-center '>123456</h1>
+            </div>
+        </div>
     );
 };
 

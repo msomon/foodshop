@@ -1,7 +1,7 @@
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import { BsCart3 } from "react-icons/bs";
 import CartItem from '../hooks/CartItem';
@@ -9,10 +9,13 @@ import useAdmin from '../hooks/useAdmin';
 import auth from '../../firebase.init';
 
 function Navbar() {
+
+  const navigate =useNavigate()
   const [user] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
-    // localStorage.removeItem('accessToken');
+    navigate("/")
+    localStorage.removeItem('accessToken');
 };
 const [admin] = useAdmin(user)
 const [cart] = CartItem()

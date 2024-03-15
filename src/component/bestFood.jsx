@@ -6,7 +6,7 @@ const BestFood = () => {
     return (
         <div className="hero bestfood min-h-screen bg-base-200 ">
         <div className=" hero-content flex-col lg:flex-row-reverse ">
-          <img src={Bestfood} className=" sm:w-[300px] md:w-[500px] lg:w-[800px] h-[300px] lg:h-[400px] rounded-lg shadow-2xl p-2" />
+          <img src={Bestfood} className=" sm:w-[300px] md:w-[500px] lg:w-[800px] h-[300px] lg:h-[400px] rounded-lg shadow-2xl p-2" alt='Good Food Img' />
           <div className='md:text-center'>
             <h1 className="text-lg font-bold">Who Are We </h1>
             <h1 className="text-2xl font-bold">We Are Providing Best Fast Food</h1>

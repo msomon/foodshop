@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
+import Img from "../assets/team.jpg"
+import Img2 from "../assets/team2.webp"
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -39,7 +40,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="../src/assets/team.jpg" alt="Team member" className="rounded-xl h-32 w-24" />
+    <img src={Img} alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Jimmey Aenderson</h2>
@@ -65,7 +66,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="../src/assets/team2.webp" alt="Team member" className="rounded-xl h-32 w-24" />
+    <img src={Img2} alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Lokisoon Fui</h2>
@@ -91,7 +92,7 @@ const OurTeam =()=> {
          
     <div className="card  bg-base-100 shadow-xl">
    <figure className="px-10 pt-10">
-    <img src="../src/assets/team2.webp" alt="Team member" className="rounded-xl h-32 w-24" />
+    <img src={Img2} alt="Team member" className="rounded-xl h-32 w-24" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">Hira Butik</h2>
